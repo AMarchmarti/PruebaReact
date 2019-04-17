@@ -37,7 +37,9 @@ export default class Login extends Component {
     }
 
     logInButton(){
-        if(this.state.userLoggedIn) return null;
+        if(this.state.userLoggedIn) return (
+            <Button variant='contained' onClick={this.login}>Cerrar Sesión </Button>
+        );
         return  (<Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>)
     }
 
