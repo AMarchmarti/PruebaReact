@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import AppBar from '@material-ui/core/AppBar'
-import { Toolbar } from '@material-ui/core';
+import { Toolbar, withStyles, Typography } from '@material-ui/core';
+
+
 import Login from '../login';
 
-export default class AppNav extends Component {
+class AppNav extends Component {
   render() {
     return (
       <div>
         <AppBar position='static'>
             <Toolbar>
-                <p>Albums</p>
+                <Typography variant='h6' component='h1' className={this.props.classes.grow}>Albums</Typography>
                 <Login/>
             </Toolbar>
         </AppBar>
@@ -18,3 +20,6 @@ export default class AppNav extends Component {
   }
 }
 
+export default withStyles({
+    grow:{flexGrow:1, textAlign:"left"}
+})(AppNav);
