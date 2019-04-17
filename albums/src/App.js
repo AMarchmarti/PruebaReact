@@ -12,7 +12,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload HOLA .
           </p>
-          <Button>
+          <Button variant='contained' color='primary'>
             Learn React
           </Button>
           <a
