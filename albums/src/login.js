@@ -36,9 +36,9 @@ export default class Login extends Component {
       })
     }
 
-    loInButton(){
+    logInButton(){
         if(this.state.userLoggedIn) return null;
-        return  <Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>}
+        return  (<Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>)
     }
 
   render() {
@@ -47,7 +47,7 @@ export default class Login extends Component {
        {/* Un metodo para deshabilitar el boton inicio sesion si estas logged 
        {!this.state.userLoggedIn && <Button variant='contained'
         onClick={this.login}>Iniciar Sesion</Button>} */}
-        {this.loInButton()}
+        {this.logInButton()}
         
     </div>
     )
