@@ -10,7 +10,7 @@ class AppNav extends Component {
     return (
       <div>
         <AppBar position='static'>
-            <Toolbar>
+            <Toolbar className={this.props.classes.nav}>
                 <Typography variant='h6' component='h1' className={this.props.classes.grow}>Albums</Typography>
                 <Login/>
             </Toolbar>
