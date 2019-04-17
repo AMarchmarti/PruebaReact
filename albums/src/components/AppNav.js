@@ -21,5 +21,8 @@ class AppNav extends Component {
 }
 
 export default withStyles({
-    grow:{flexGrow:1, textAlign:"left"}
+    grow:{flexGrow:1, textAlign:"left"},
+    nav:{
+        color: 'white'
+    }
 })(AppNav);
