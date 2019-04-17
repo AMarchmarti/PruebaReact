@@ -11,7 +11,7 @@ class AppNav extends Component {
       <div>
         <AppBar position='static'>
             <Toolbar className={this.props.classes.nav}>
-                <Typography variant='h6' component='h1' className={this.props.classes.grow}>Albums</Typography>
+                <Typography color='inherit' variant='h6' component='h1' className={this.props.classes.grow}>Albums</Typography>
                 <Login/>
             </Toolbar>
         </AppBar>
