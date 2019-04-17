@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 
 import {withStyles} from '@material-ui/core/styles'
-import Login from './login';
 import AppNav from './components/AppNav';
 
 class App extends Component {
@@ -11,7 +10,6 @@ class App extends Component {
     return (
       <div className="App">
         <AppNav/>
-        <Login/>
       </div>
     );
   }
