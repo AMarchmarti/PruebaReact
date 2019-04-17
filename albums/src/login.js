@@ -20,7 +20,7 @@ export default class Login extends Component {
   render() {
     return (
     <div>
-        <Button variant='contained' onClick={this.login}> Iniciar Sesion </Button>
+        <Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>
     </div>
     )
   }
