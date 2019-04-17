@@ -4,8 +4,27 @@ import firebase from './initializers/firebase'
 
 
 export default class Login extends Component {
+    constructor(props){
+        super(props)
+        this.login = this.login.bind(this)
 
-  login = () => {
+        this.state = {
+            userLoggedIn: false
+        }
+
+    }
+
+  componentDidMount(){
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user){
+            this.setState({
+                userLoggedIn: true
+            })
+        }else{}
+      })
+  }
+
+  login() {
       let provider = new firebase.auth.GoogleAuthProvider()
 
       provider.addScope('https://www.googleapis.com/auth/photoslibrary.readonly')
@@ -17,10 +36,19 @@ export default class Login extends Component {
       })
     }
 
+    loInButton(){
+        if(this.state.userLoggedIn) return null;
+        return  <Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>}
+    }
+
   render() {
     return (
     <div>
-        <Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>
+       {/* Un metodo para deshabilitar el boton inicio sesion si estas logged 
+       {!this.state.userLoggedIn && <Button variant='contained'
+        onClick={this.login}>Iniciar Sesion</Button>} */}
+        {this.loInButton()}
+        
     </div>
     )
   }
