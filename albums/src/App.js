@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button';
+import {withStyles} from '@material-ui/core/styles'
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload HOLA .
           </p>
-          <Button variant='contained' color='primary'>
+          <Button variant='contained' className={this.props.classes.Button}>
             Learn React
           </Button>
           <a
@@ -29,4 +30,11 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withStyles({
+  Button:{
+    backgroundColor: 'red'
+  },
+  sombra:{
+    boxShadow:'0px 0px 5px rgba(0,0,0.5)'
+  }
+})(App);
