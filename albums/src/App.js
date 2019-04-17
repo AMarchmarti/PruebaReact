@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from '@material-ui/core/Button';
 
 class App extends Component {
   render() {
@@ -11,6 +12,9 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload HOLA .
           </p>
+          <Button>
+            Learn React
+          </Button>
           <a
             className="App-link"
             href="https://reactjs.org"
