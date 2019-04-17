@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import firebase from './initializers/firebase'
-import {Avatar, withStyles} from '@material-ui/core'
+import {Avatar, withStyles, IconButton, Icon} from '@material-ui/core'
 
+import {ExitToApp} from '@material-ui/icons'
 
 class Login extends Component {
     constructor(props){
         super(props)
         this.login = this.login.bind(this)
+        this.logout = this.logout.bind(this)
 
         this.state = {
             userLoggedIn: false,
@@ -27,6 +29,10 @@ class Login extends Component {
       })
   }
 
+  logout(){
+
+  }
+
   login() {
       let provider = new firebase.auth.GoogleAuthProvider()
 
@@ -41,9 +47,9 @@ class Login extends Component {
 
     logInButton(){
         if(this.state.userLoggedIn) return (
-           [<Avatar src={this.state.photoURL}/>]
-            //<Button variant='contained' onClick={this.state.userLoggedIn}>Cerrar Sesión </Button>
-        );
+           [<Avatar src={this.state.photoURL}/>,
+            (<IconButton color='inheritance' onClick={this.logout()}><ExitToApp/></IconButton>)
+           ]);
         return  (<Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>)
     }
 
