@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import firebase from './initializers/firebase'
+import {Avatar} from '@material-ui/core'
 
 
 export default class Login extends Component {
@@ -9,7 +10,8 @@ export default class Login extends Component {
         this.login = this.login.bind(this)
 
         this.state = {
-            userLoggedIn: false
+            userLoggedIn: false,
+            photoURL: ''
         }
 
     }
@@ -18,7 +20,8 @@ export default class Login extends Component {
       firebase.auth().onAuthStateChanged((user) => {
         if (user){
             this.setState({
-                userLoggedIn: true
+                userLoggedIn: true,
+                photoURL: user.providerData[0].photoURL
             })
         }else{}
       })
@@ -38,7 +41,8 @@ export default class Login extends Component {
 
     logInButton(){
         if(this.state.userLoggedIn) return (
-            <Button variant='contained' onClick={this.login}>Cerrar Sesión </Button>
+           [<Avatar src={this.state.photoURL}/>]
+            //<Button variant='contained' onClick={this.state.userLoggedIn}>Cerrar Sesión </Button>
         );
         return  (<Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>)
     }
