@@ -34,7 +34,7 @@ class Login extends Component {
   }
 
   logout(){
-    firebase.auth().signOut()
+    firebase.auth().signOut().then(console.log)
   }
 
   login() {
