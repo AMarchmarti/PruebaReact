@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button';
 import firebase from './initializers/firebase'
-import {Avatar} from '@material-ui/core'
+import {Avatar, withStyles} from '@material-ui/core'
 
 
-export default class Login extends Component {
+class Login extends Component {
     constructor(props){
         super(props)
         this.login = this.login.bind(this)
@@ -49,7 +49,7 @@ export default class Login extends Component {
 
   render() {
     return (
-    <div>
+    <div className={this.props.classes.container}>
        {/* Un metodo para deshabilitar el boton inicio sesion si estas logged 
        {!this.state.userLoggedIn && <Button variant='contained'
         onClick={this.login}>Iniciar Sesion</Button>} */}
@@ -59,3 +59,10 @@ export default class Login extends Component {
     )
   }
 }
+
+export default withStyles({
+    container:{
+        display: 'flex',
+        flexDirection: 'row'
+    }
+})(Login)
