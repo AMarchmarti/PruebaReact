@@ -52,7 +52,7 @@ class Login extends Component {
     logInButton(){
         if(this.state.userLoggedIn) return (
            [<Avatar src={this.state.photoURL}/>,
-            (<IconButton color='inherit' onClick={this.logout()}><ExitToApp/></IconButton>)
+            (<IconButton color='inherit' onClick={this.logout}><ExitToApp/></IconButton>)
            ]);
         return  (<Button variant='contained' onClick={this.login}>Iniciar Sesion</Button>)
     }
