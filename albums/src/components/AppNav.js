@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar'
 import { Toolbar, withStyles, Typography } from '@material-ui/core';
 
 
-import Login from '../login';
+import Login from '../containers/login';
 
 class AppNav extends Component {
   render() {
